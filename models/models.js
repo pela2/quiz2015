@@ -22,7 +22,7 @@ var sequelize = new Sequelize(DB_name, user, pwd,
 		port: 		port,
 		host: 		host,
 	  	storage: 	storage,
-	  	omitNull: 	true 
+	  	//omitNull: 	true 
 	}
 );
 
@@ -38,7 +38,16 @@ sequelize.sync().then(function(){
 			Quiz.create({
 				pregunta: 'Capital de Italia?',
 				respuesta: 'Roma'
-			}).then(function(){console.log('Base de Datos inicializada')});
+			});
+			Quiz.create({
+				pregunta: 'Capital de Portugal?',
+				respuesta: 'Lisboa'
+			});
+			Quiz.create({
+				pregunta: 'Capital de Uruguay?',
+				respuesta: 'Montevideo'
+			})
+			.then(function(){console.log('Base de Datos inicializada')});
 		};
 	});
 });
