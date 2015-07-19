@@ -14,3 +14,4 @@ nav span		{margin: 0px 10px 0px 0px;}
     width: 50%;
     border-collapse: collapse;
 }
+#ErrorMsgs { color: #f61; font-size: smaler;}
