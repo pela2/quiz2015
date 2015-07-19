@@ -5,3 +5,8 @@ body            {background: #333;}
 h2 span, section h3 	{display: none;}
 body			{font-size: xx-large;}
 footer, input		{font-size: large;}
+.tablad {
+	text-align: left;
+	margin-left: 45%;
+    width: 50%;
+    border-collapse: collapse;

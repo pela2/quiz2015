@@ -8,3 +8,9 @@ section > div		{padding:20px;}
 header, nav, section	{background: #eee; text-align: center;}
 footer			{background: #eee; text-align: center;}
 nav span		{margin: 0px 10px 0px 0px;}
+.tablad {
+	text-align: left;
+	margin-left: 45%;
+    width: 50%;
+    border-collapse: collapse;
+}

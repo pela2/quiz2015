@@ -1,10 +1,18 @@
 var models = require('../models/models.js');
+var url = require('url');
 
 //GET /quizes/:id
 exports.index = function(req, res){
-	models.Quiz.findAll().then(function(quizes){
+	var url_parts = url.parse(req.url,true);
+    var search = "%";
+    if( url_parts.query!=null && url_parts.query.search !=null ) {
+    	search = url_parts.query.search.replace(" ","%");
+		search = "%"+search+"%";
+		console.log("search --> "+search);
+	} 
+	models.Quiz.findAll( { where: ["pregunta like ?", search]} ).then(function(quizes){
 		res.render('quizes/index.ejs', {quizes: quizes});
-	})	
+	})
 };
 
 //AUTOLOAD - factoriza el codigo si la ruta incluye :quizId

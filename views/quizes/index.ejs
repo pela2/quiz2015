@@ -1,4 +1,9 @@
-<table>
+<form method="get" action="/quizes">
+  Buscar: <input type="text" name="search" placeholder="Ingrese el texto a buscar" />
+  <input type="submit" value="Enviar">
+</form>
+<br />
+<table class="tablad">
 	<%  var i,aux=""; 
 		for (i=0; i < quizes.length; i++) {
 				aux = "/quizes/" + quizes[i].id %>
