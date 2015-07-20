@@ -1,3 +1,15 @@
+<label for="ind" class="rem">Indice temático:</label>
+ <select id="ind" name="quiz[indice]" >
+  	<% 
+  	var opciones = ["otro","humanidades","ocio","ciencia","tecnologia"];
+  	var i; for (i=0; i < opciones.length; i++) { %>
+  		<option value="<%= opciones[i] %>" 
+  		<% if(opciones[i]===quiz.indice) { %>
+			selected
+		<% } %>
+  		><%= opciones[i] %></option>
+	<% } %>
+</select> <p>
 <label for="preg" class="rem">Pregunta:</label>
 <input type="text" id="preg" name="quiz[pregunta]" value="<%= quiz.pregunta %>" /> <p>
 <label for="preg" class="rem">Respuesta:</label>

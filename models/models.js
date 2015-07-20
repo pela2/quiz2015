@@ -36,14 +36,17 @@ sequelize.sync().then(function(){
 	Quiz.count().then(function(count){
 		if(count===0){
 			Quiz.create({
+				indice: 'ciencia',
 				pregunta: 'Capital de Italia?',
 				respuesta: 'Roma'
 			});
 			Quiz.create({
-				pregunta: 'Capital de Portugal?',
-				respuesta: 'Lisboa'
+				indice: 'tecnologia',
+				pregunta: 'Cuantos bit son un Byte?',
+				respuesta: '8'
 			});
 			Quiz.create({
+				indice: 'ciencia',
 				pregunta: 'Capital de Uruguay?',
 				respuesta: 'Montevideo'
 			})

@@ -10,6 +10,13 @@ module.exports = function(sequelize, DataTypes) {
 		respuesta: {
 			type: DataTypes.STRING,
 			validate: { notEmpty: {msg: "-> Falta respuesta"}}
+		},
+		indice: {
+			type: DataTypes.STRING,
+			validate: { 
+						notEmpty: {msg: "-> Falta el indice temático"},
+						isIn: 	  [['tecnologia','humanidades','ocio','ciencia','otro']]
+					  }	
 		}
 	});
 }
