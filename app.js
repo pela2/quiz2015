@@ -45,6 +45,27 @@ app.use(
         next();
     }
 );
+// 90 
+// 100
+//30
+app.use(
+    function(req, res, next){
+        if (req.session.user) {
+            var now = new Date();
+            /*console.log("req.session.user.time --> " + req.session.user.time);
+            console.log("                  now --> " + now.getTime());
+            console.log("      SESSION_TIMEOUT --> " + process.env.SESSION_TIMEOUT);*/
+            if( now.getTime() - req.session.user.time > process.env.SESSION_TIMEOUT  ) {
+                delete req.session.user;
+                req.session.errors = [{"message": 'La sesion ha expirado!'}];
+            } else {
+                req.session.user.time = now.getTime();
+            }
+        }
+        next();
+    }
+);
+
 app.use('/', routes);
 //app.use('/users', users);
 
